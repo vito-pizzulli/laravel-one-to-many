@@ -18,7 +18,8 @@
         @endif
 
         <div class="card-body">
-            <h5 class="card-title">Title: {{ $project->title }} </h5>
+            <h1 class="card-title fs-3">Title: {{ $project->title }} </h1>
+            <p class="card-text">Type: {{ $project->type->name }} </p>
             <p class="card-text">Description: {{ $project->description }} </p>
             <p class="card-text">GitHub Page Link: {{ $project->link }} </p>
             <p class="card-text">Date Of Creation: {{ $project->creation_date }} </p>
