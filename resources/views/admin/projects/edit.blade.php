@@ -16,6 +16,19 @@
         @enderror
 
         <div class="mb-3">
+            <label for="type_id" class="form-label">Type:</label>
+            <select name="type_id" id="type_id" class="form-select">
+                <option selected hidden></option>
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}" {{ old('type_id', $project->type_id) == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        @error('type_id')
+                    <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <div class="mb-3">
             <label for="description" class="form-label">Description:</label>
             <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{ old( 'description' , $project->description) }}</textarea>
         </div>
