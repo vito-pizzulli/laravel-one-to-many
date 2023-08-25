@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Type;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -24,8 +25,9 @@ class ProjectController extends Controller
      * Show the form for creating a new Project instance.
      */
     public function create()
-    {
-        return view('admin.projects.create');
+    {   
+        $types = Type::all();
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
