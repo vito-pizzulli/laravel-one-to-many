@@ -13,3 +13,7 @@
 - visualizzare nella pagina di dettaglio di un progetto la tipologia associata, se presente;
 - permettere all’utente di associare una tipologia nella pagina di creazione e modifica di un progetto;
 - gestire il salvataggio dell’associazione progetto-tipologia con opportune regole di validazione.
+
+## Bonus
+
+<p>Creare il seeder per il model Type.</p>
