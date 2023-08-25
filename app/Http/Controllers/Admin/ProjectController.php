@@ -65,8 +65,9 @@ class ProjectController extends Controller
      * Show the form for editing the specified Project instance.
      */
     public function edit(Project $project)
-    {
-        return view('admin.projects.edit', compact('project'));
+    {   
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
@@ -76,6 +77,7 @@ class ProjectController extends Controller
     {
         $data = $request->validate([
             "title" => ["required", "min:3", "max:255", Rule::unique('projects')->ignore($project->id)],
+            'type_id' => 'required|exists:types,id',
             'description'=>"required|min:3",
             'link'=>"url:https",
             'creation_date'=>"required|date",
