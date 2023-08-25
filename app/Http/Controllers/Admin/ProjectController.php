@@ -37,6 +37,7 @@ class ProjectController extends Controller
     {
         $data = $request->validate([
             'title'=>"required|unique:projects|min:3|max:255",
+            'type_id' => 'required|exists:types,id',
             'description'=>"required|min:3",
             'link'=>"url:https",
             'creation_date'=>"required|date",
