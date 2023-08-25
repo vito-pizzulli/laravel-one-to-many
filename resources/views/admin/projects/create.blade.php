@@ -19,7 +19,7 @@
             <select name="type_id" id="type_id" class="form-select">
                 <option selected hidden></option>
                 @foreach ($types as $type)
-                    <option value="{{ $type->id }}" {{ old('type') == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
+                    <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
                 @endforeach
             </select>
         </div>
